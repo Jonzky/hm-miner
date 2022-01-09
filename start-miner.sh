@@ -8,11 +8,11 @@ fi
 
 # If a url has been set use it, otherwise use the default
 if [[ -z "${RASPBERRYPI_MINER_CONFIG_URL}" ]]; then
+  cp miner.config /opt/miner/releases/$HELIUM_GA_RELEASE/sys.config
+else
   wget \
       -O "/opt/miner/releases/$HELIUM_GA_RELEASE/sys.config" \
       "${OVERRIDE_CONFIG_URL}"
-else
-  cp miner.config /opt/miner/releases/$HELIUM_GA_RELEASE/sys.config
 fi
 
 # Wait for the diagnostics app to be loaded
