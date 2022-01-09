@@ -39,10 +39,8 @@ jobs:
           flavor: |
             latest=true
           tags: |
-            type=sha,prefix=${{ matrix.args }}-
-            type=sha,format=long,prefix=${{ matrix.args }}-
-            type=ref,event=tag,prefix=${{ matrix.args }}-
-            type=raw,value=${{ matrix.args }}-latest
+            type=sha,prefix=
+            type=sha,format=long,prefix=
 
       - name: Build and push
         id: docker_build
