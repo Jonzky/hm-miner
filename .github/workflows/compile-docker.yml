@@ -37,7 +37,7 @@ jobs:
         uses: docker/metadata-action@v3
         with:
           images: |
-            nebraltd/hm-miner
+            jonzky/hm-miner
             ghcr.io/${{ github.repository }}
           flavor: |
             latest=true
