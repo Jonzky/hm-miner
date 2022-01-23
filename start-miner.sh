@@ -1,7 +1,5 @@
 #!/usr/bin/env sh
 
-. ./dbus-wait.sh
-
 if [ "$(df -h /var/data/ | tail -1 | awk '{print $5}' | tr -d '%')" -ge 80 ]; then
     rm -rf /var/data/*
 fi
@@ -23,5 +21,4 @@ done
 
 /opt/miner/gen-region.sh &
 
-wait_for_dbus \
-    && /opt/miner/bin/miner foreground
+/opt/miner/bin/miner foreground
