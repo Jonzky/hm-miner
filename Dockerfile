@@ -3,7 +3,7 @@ ARG BUILD_ARCH=arm64
 
 # FROM quay.io/team-helium/miner:miner-"$BUILD_ARCH"_"$HELIUM_GA_RELEASE"_GA
 
-FROM docker.io/jonzky/debug-helium-miner:2f87f4f
+FROM docker.io/jonzky/debug-helium-miner:c51cff1
 
 WORKDIR /opt/miner
 
