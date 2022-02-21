@@ -1,9 +1,10 @@
 ARG HELIUM_GA_RELEASE=2022.01.29.0
 ARG BUILD_ARCH=arm64
 
+
 # FROM quay.io/team-helium/miner:miner-"$BUILD_ARCH"_"$HELIUM_GA_RELEASE"_GA
 
-FROM docker.io/jonzky/debug-helium-miner:c51cff1
+FROM docker.io/jonzky/debug-helium-miner:4f9c8f6
 
 WORKDIR /opt/miner
 
