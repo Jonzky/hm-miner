@@ -30,6 +30,7 @@ jobs:
           username: ${{ github.actor }}
           password: ${{ secrets.GITHUB_TOKEN }}
 
+
       - name: Extract metadata (tags, labels) for Docker
         id: meta
         uses: docker/metadata-action@v3
@@ -42,7 +43,7 @@ jobs:
           tags: |
             type=sha,prefix=
             type=sha,format=long,prefix=
-            type=raw,value=${{steps.tag.outputs.tag}}
+            type=raw,value=${{github.event.client_payload.build_tag}}
 
       - name: Build and push
         id: docker_build
