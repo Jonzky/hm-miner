@@ -1,7 +1,6 @@
 name: Compile Docker Images
 
 on: 
-  push:
   repository_dispatch:
     types: [miner-built]
 
@@ -51,6 +50,11 @@ jobs:
           push: true
           labels: ${{ steps.meta.outputs.labels }}
           tags: ${{ steps.meta.outputs.tags }}
+
+          build-args: |
+            FIRMWARE_VERSION=${{ github.event.client_payload.build_tag }}
+            HELIUM_GA_RELEASE=${{ github.event.client_payload.build_tag }}
+            MINER_DIGEST=${{ github.event.client_payload.digest }}
 
       - name: Image digest
         run: echo ${{ steps.docker_build.outputs.digest }}
