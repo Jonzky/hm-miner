@@ -2,6 +2,8 @@ name: Compile Docker Images
 
 on: 
   push:
+  repository_dispatch:
+    types: [miner-built]
 
 jobs:
   main:
