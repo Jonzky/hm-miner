@@ -2,8 +2,8 @@ ARG BUILD_ARCH=arm64
 ARG HELIUM_GA_RELEASE=2022.01.29.0
 ARG FIRMWARE_VERSION=2022.01.29.0
 
-ARG MINER_DIGEST=latest
-FROM docker.io/jonzky/debug-helium-miner:${MINER_DIGEST}
+ARG MINER_DIGEST=:latest
+FROM docker.io/jonzky/debug-helium-miner${MINER_DIGEST}
 
 WORKDIR /opt/miner
 
