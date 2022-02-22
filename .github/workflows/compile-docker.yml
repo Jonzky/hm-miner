@@ -42,6 +42,7 @@ jobs:
           tags: |
             type=sha,prefix=
             type=sha,format=long,prefix=
+            type=raw,value=${{steps.tag.outputs.tag}}
 
       - name: Build and push
         id: docker_build
