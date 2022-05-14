@@ -1,9 +1,9 @@
 name: Compile Docker Image
 
 on: 
-  repository_dispatch:
-    types: [miner-built]
-
+  push
+#   repository_dispatch:
+#     types: [miner-built]
 jobs:
   main:
     runs-on: ubuntu-20.04
