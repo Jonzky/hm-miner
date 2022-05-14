@@ -1,4 +1,4 @@
-name: Compile Docker Images
+name: Compile Docker Image
 
 on: 
   repository_dispatch:
