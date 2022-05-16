@@ -1,8 +1,10 @@
 name: Compile Docker Image
 
 on: 
-  repository_dispatch:
-    types: [miner-built]
+  push:
+    tags:
+      - 2022*
+
 jobs:
   main:
     runs-on: ubuntu-20.04
@@ -53,9 +55,8 @@ jobs:
           tags: ${{ steps.meta.outputs.tags }}
 
           build-args: |
-            FIRMWARE_VERSION=${{ github.event.client_payload.build_tag }}
-            HELIUM_GA_RELEASE=${{ github.event.client_payload.build_tag }}
-            MINER_DIGEST=${{ github.event.client_payload.digest }}
+            FIRMWARE_VERSION=${{ github.ref }}
+            HELIUM_GA_RELEASE=${{ github.ref }}
 
       - name: Image digest
         run: echo ${{ steps.docker_build.outputs.digest }}
