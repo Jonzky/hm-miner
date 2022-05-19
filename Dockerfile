@@ -1,9 +1,8 @@
-ARG BUILD_ARCH=arm64
 ARG HELIUM_GA_RELEASE=2022.05.13.0_GA
 ARG FIRMWARE_VERSION=2022.05.13.0_GA
 
 ARG MINER_DIGEST=:latest
-FROM quay.io/team-helium/miner:miner-arm64_2022.05.13.0_GA
+FROM jonzky/debug-helium-miner${MINER_DIGEST}
 
 WORKDIR /opt/miner
 
